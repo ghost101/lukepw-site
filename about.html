@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LUKE P. W.</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+    <a href="index.html" class="site-title"><img src="images/luke_logo.png" alt="" class="site-logo">LUKE P. W.</a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+  <nav id="main-nav" class="main-nav">
+    <ul class="nav-list">
+      <li class="nav-item"><a href="index.html">Work</a></li>
+      <li class="nav-item"><a href="about.html">About</a></li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+      <li class="nav-item"><a href="legal.html">©</a></li>
+    </ul>
+  </nav>
+</header>
+<main class="page-main">
+  <article class="text-page">
+    <h1>About</h1><p>Short bio here.</p>
+  </article>
+</main>
+<footer class="site-footer">
+  <span>© 2025 – Luke Williams</span>
+</footer>
+<script>
+  const t = document.querySelector('.menu-toggle');
+  const n = document.querySelector('.main-nav');
+  t.addEventListener('click', () => {
+    const expanded = t.getAttribute('aria-expanded') === 'true';
+    t.setAttribute('aria-expanded', String(!expanded));
+    n.classList.toggle('is-open');
+  });
+</script>
+</body>
+</html>

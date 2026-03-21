@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LUKE P. W.</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="site-title"><img src="images/luke_logo.png" alt="" class="site-logo">LUKE P. W.</a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+  <nav id="main-nav" class="main-nav">
+    <ul class="nav-list">
+    <li class="nav-item has-children">
+      <a href="index.html" class="work-toggle">Work</a>
+      <ul class="sub-nav">
+        <li><a href="#gate">Gate</a></li>
+        <li><a href="#library">Library</a></li>
+        <li><a href="#desk">Desk</a></li>
+        <li><a href="#parquet">Parquet floor</a></li>
+      </ul>
+    </li>
+      <li class="nav-item"><a href="about.html">About</a></li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+      <li class="nav-item"><a href="legal.html">©</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="page-main">
+  <section class="carousel" aria-label="Featured carpentry projects">
+    <div class="carousel-inner">
+      <div class="carousel-slide is-active">
+        <img src="images/chisel_c .jpg" alt="Chisel" />
+        <div class="carousel-caption">Tools</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="images/testgate.jpg" alt="Gate" />
+        <div class="carousel-caption">Driveway Gate</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="images/coop_c.jpg" alt="Chicken Coop" />
+        <div class="carousel-caption">Chicken Coop</div>
+      </div>
+      <!-- <div class="carousel-slide">
+        <img src="images/gate_part.jpg" alt="Gate" />
+        <div class="carousel-caption">Gate</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="images/gate_aspect.jpg" alt="Workshop and tools" />
+        <div class="carousel-caption">Workshop & tools</div>
+      </div>
+      <div class="carousel-slide">
+        <img src="images/tools_aspect.jpg" alt="Joinery sketch" />
+        <div class="carousel-caption">Design sketch</div>
+      </div> -->
+    </div>
+
+    <button class="carousel-control prev" aria-label="Previous project">‹</button>
+    <button class="carousel-control next" aria-label="Next project">›</button>
+
+    <div class="carousel-dots" aria-hidden="true">
+      <button class="dot is-active"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+      <!-- <button class="dot"></button>
+      <button class="dot"></button>
+      <button class="dot"></button> -->
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>© 2025 – Luke Peter Williams</span>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    nav.classList.toggle('is-open');
+  });
+
+  const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+  const dots = Array.from(document.querySelectorAll('.carousel-dots .dot'));
+  const prevBtn = document.querySelector('.carousel-control.prev');
+  const nextBtn = document.querySelector('.carousel-control.next');
+  let current = 0;
+  let timer = null;
+
+  function showSlide(index) {
+    slides[current].classList.remove('is-active');
+    dots[current].classList.remove('is-active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('is-active');
+    dots[current].classList.add('is-active');
+  }
+
+  function nextSlide() { showSlide(current + 1); }
+  function prevSlide() { showSlide(current - 1); }
+
+  function startAuto() {
+    stopAuto();
+    timer = setInterval(nextSlide, 4000);
+  }
+  function stopAuto() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  nextBtn.addEventListener('click', () => { nextSlide(); startAuto(); });
+  prevBtn.addEventListener('click', () => { prevSlide(); startAuto(); });
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { showSlide(i); startAuto(); });
+  });
+
+  const carousel = document.querySelector('.carousel');
+  carousel.addEventListener('mouseenter', stopAuto);
+  carousel.addEventListener('mouseleave', startAuto);
+
+  startAuto();
+</script>
+</body>
+</html>

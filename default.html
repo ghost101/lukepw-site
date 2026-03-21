@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LukePW</title>
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 2.5%;
+  font-family: "Sofia", sans-serif;
+}
+
+.content {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+.myDiv:target{
+
+display:block !important;
+
+}
+</style>
+<body>
+<div>
+<h1>Luke Peter Williams</h1>
+
+The quick brown fox jumps over the <a href="#About">lazy dog</a>, <br>
+who ate from a plate of nachos <a href="#Work">see here...</a>
+<a href="mailto:lukepw@live.co.uk">contact me!</a>
+
+<!-- 
+
+<nav id="main_nav">
+			<ul>
+				<li><a href="#About">About</a></li>
+				<li><a href="#Work">Work</a></li>
+				<li><a href="#Contact">Contact</a></li>
+			</ul>
+			
+		</nav>
+</div> -->
+
+<div class="myDiv" id="About" style="display:none">About goes here ... </div>
+<div class="myDiv" id="Contact" style="display:none">Contact info goes here ...</div>
+<div class="myDiv" id="Work" style="display:none">
+	<div class="row"> 
+	  <div class="column">
+		<img src="/images/glyphbook1.jpg" style="width:100%"> testing 123
+		<img src="/images/circle_square_poster.jpg" style="width:100%">
+		<img src="/images/circle-square1.jpg" style="width:100%">
+	  </div>
+	  <div class="column">
+		<img src="/images/step_down2 copy.jpg" style="width:100%">
+		<img src="/images/UK_POSTER.jpg" style="width:100%">
+		<img src="/images/RGB_poster.jpg" style="width:100%">
+	  </div>  
+	  <div class="column"> 
+	   <img src="/images/crosshatch2.jpg" style="width:100%">
+		<img src="/images/door_poster.jpg" style="width:100%">
+		<img src="/images/glyphbook1.jpg" style="width:100%">
+	  </div>
+	</div>
+</div>
+
+</body>
+</html>
