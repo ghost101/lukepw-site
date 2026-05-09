@@ -24,20 +24,24 @@
   </nav>
 </header>
 <main class="page-main">
-  <form action="send.php" method="POST" class="contact-form">
+  <form class="contact-form" data-formsubmit-endpoint="https://formsubmit.co/ajax/lukepw@live.co.uk">
     <h2>Contact Me</h2>
 
-    <label>Name</label>
-    <input type="text" name="name" required>
+    <label for="contact-name">Name</label>
+    <input id="contact-name" type="text" name="name" required>
 
-    <label>Email</label>
-    <input type="email" name="email" required>
+    <label for="contact-email">Email</label>
+    <input id="contact-email" type="email" name="email" required>
 
-    <label>Message</label>
-    <textarea name="message" required></textarea>
+    <label for="contact-message">Message</label>
+    <textarea id="contact-message" name="message" required></textarea>
+
+    <input type="hidden" name="_subject" value="New Contact Form Message">
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden>
 
     <button type="submit">Send Message</button>
-</form>
+    <p class="form-status" role="status" aria-live="polite"></p>
+  </form>
 
 </main>
 <footer class="site-footer">
@@ -50,6 +54,37 @@
     const expanded = t.getAttribute('aria-expanded') === 'true';
     t.setAttribute('aria-expanded', String(!expanded));
     n.classList.toggle('is-open');
+  });
+
+  const contactForm = document.querySelector('.contact-form');
+  const formStatus = document.querySelector('.form-status');
+
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    formStatus.textContent = 'Sending...';
+
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+
+    try {
+      const response = await fetch(contactForm.dataset.formsubmitEndpoint, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json'
+        },
+        body: new FormData(contactForm)
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed.');
+      }
+
+      window.location.href = 'thankyou.html';
+    } catch (error) {
+      formStatus.textContent = 'Sorry, there was a problem sending your message. Please email lukepw@live.co.uk instead.';
+      submitButton.disabled = false;
+    }
   });
 </script>
 </body>
