@@ -170,6 +170,10 @@ a:hover { text-decoration: underline; }
   font-size:0.9rem;
 }
 
+.carousel-caption:empty {
+  display:none;
+}
+
 /* arrows */
 .carousel-control {
   position:absolute;
@@ -303,5 +307,22 @@ a:hover { text-decoration: underline; }
 
 .contact-form button:hover {
     background: #333;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 12px 18px;
+    background: #111;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.button-link:hover,
+.button-link:focus-visible {
+    background: #333;
+    color: #fff;
+    text-decoration: none;
 }
 
