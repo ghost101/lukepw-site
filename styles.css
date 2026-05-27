@@ -58,65 +58,37 @@ a:hover { text-decoration: underline; }
 }
 
 .sub-nav {
-  display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  margin-top: 0.3rem;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  list-style: none;
+  display: none;
+  min-width: 170px;
+  margin: 0;
   padding: 0.4rem 0;
-  min-width: 150px;
-  z-index: 1000; /* Prevents hiding behind other elements */
-}
-
-.sub-nav li a {
-  display: block;
-  padding: 0.35rem 1rem;
-  white-space: nowrap;
-}
-
-.has-children:hover .sub-nav {
-  display: block;
-}
-
-/* Parent needs to own the hover state */
-.nav-item.has-children {
-  position: relative;
-}
-
-/* Hidden by default */
-.sub-nav {
-  position: absolute;
-  top: 100%;          /* directly under the Work link */
-  left: 0;
-  margin-top: 0;      /* IMPORTANT: remove gaps */
-  padding: 0.4rem 0;
-  min-width: 160px;
-
   list-style: none;
   background: #fff;
   border: 1px solid #e0e0e0;
   box-shadow: 0 4px 8px rgba(0,0,0,0.06);
-
-  display: none;
   z-index: 1000;
 }
 
-/* Items inside the dropdown */
 .sub-nav li a {
   display: block;
-  padding: 0.35rem 1rem;
+  padding: 0.4rem 1rem;
   white-space: nowrap;
   text-decoration: none;
 }
 
-.sub-nav li a:hover {
+.sub-nav li a:hover,
+.sub-nav li a:focus-visible {
   background: #f4f4f4;
 }
 
-/* Show dropdown when the li OR its children are hovered/focused */
+.sub-nav li a.is-active {
+  background: #111;
+  color: #fff;
+}
+
 .nav-item.has-children:hover .sub-nav,
 .nav-item.has-children:focus-within .sub-nav {
   display: block;
@@ -145,35 +117,30 @@ a:hover { text-decoration: underline; }
 }
 .carousel-inner {
   position:relative;
+  height:clamp(340px, calc(100vh - 330px), 620px);
+  background:#fff;
 }
 .carousel-slide {
   position:absolute;
   inset:0;
   opacity:0;
+  pointer-events:none;
   transition:opacity 0.9s ease-in-out;
 }
 .carousel-slide.is-active {
   opacity:1;
-  position:relative;
+  pointer-events:auto;
+}
+.carousel-slide.is-hidden {
+  display:none;
 }
 .carousel-slide img {
   width:100%;
-  height:auto;
+  height:100%;
   display:block;
+  object-fit:contain;
+  cursor:pointer;
 }
-.carousel-caption {
-  position:absolute;
-  left:1.5rem;
-  bottom:1.5rem;
-  background:rgba(255,255,255,0.85);
-  padding:0.3rem 0.7rem;
-  font-size:0.9rem;
-}
-
-.carousel-caption:empty {
-  display:none;
-}
-
 /* arrows */
 .carousel-control {
   position:absolute;
@@ -188,23 +155,81 @@ a:hover { text-decoration: underline; }
 .carousel-control.prev { left:0.5rem; }
 .carousel-control.next { right:0.5rem; }
 
-/* dots */
-.carousel-dots {
-  display:flex;
-  justify-content:center;
-  gap:0.4rem;
-  margin-top:0.6rem;
+/* Project galleries */
+.project-gallery-title {
+  margin:0 0 1rem;
+  font-size:1rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
 }
-.carousel-dots .dot {
-  width:8px;
-  height:8px;
-  border-radius:999px;
-  border:1px solid #333;
-  background:transparent;
-  cursor:pointer;
+
+.thumbnail-grid {
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:1rem;
+}
+
+.thumbnail-card {
+  display:block;
+  width:100%;
   padding:0;
+  border:0;
+  border-radius:0;
+  background:#fff;
+  cursor:pointer;
+  overflow:hidden;
 }
-.carousel-dots .dot.is-active { background:#333; }
+
+.thumbnail-card:hover,
+.thumbnail-card:focus-visible {
+  outline:0;
+}
+
+.thumbnail-card img {
+  display:block;
+  width:100%;
+  aspect-ratio:4 / 3;
+  object-fit:cover;
+}
+
+.thumbnail-card.is-selected img {
+  opacity:0.85;
+}
+
+.lightbox {
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+  background:rgba(255,255,255,0.95);
+  z-index:2000;
+}
+
+.lightbox[hidden] {
+  display:none;
+}
+
+.lightbox img {
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+
+.lightbox-close {
+  position:absolute;
+  top:1rem;
+  right:1rem;
+  width:2.4rem;
+  height:2.4rem;
+  border:1px solid #111;
+  border-radius:999px;
+  background:#fff;
+  cursor:pointer;
+  font-size:1.5rem;
+  line-height:1;
+}
 
 /* Mobile */
 .menu-toggle {
@@ -259,8 +284,23 @@ a:hover { text-decoration: underline; }
     padding: 0;
   }
 
+  .sub-nav {
+    position: static;
+    box-shadow: none;
+    margin-top: 0.6rem;
+    text-align: center;
+  }
+
   .page-main {
     padding: 1.5rem;
+  }
+
+  .thumbnail-grid {
+    grid-template-columns:1fr;
+  }
+
+  .carousel-inner {
+    height:clamp(280px, calc(100vh - 360px), 480px);
   }
 
   .site-footer {

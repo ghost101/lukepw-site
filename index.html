@@ -16,15 +16,17 @@
   <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
   <nav id="main-nav" class="main-nav">
     <ul class="nav-list">
-    <li class="nav-item has-children">
-      <a href="index.html" class="work-toggle">Work</a>
-      <ul class="sub-nav">
-        <li><a href="#gate">Gate</a></li>
-        <li><a href="#library">Library</a></li>
-        <li><a href="#desk">Desk</a></li>
-        <li><a href="#parquet">Parquet floor</a></li>
-      </ul>
-    </li>
+      <li class="nav-item has-children">
+        <a href="#all" class="work-toggle" data-filter="all">Work</a>
+        <ul class="sub-nav">
+          <li><a href="#all" data-filter="all" class="is-active">All work</a></li>
+          <li><a href="#bookcase" data-filter="bookcase">Bookcases</a></li>
+          <li><a href="#cabinet" data-filter="cabinet">Cabinets</a></li>
+          <li><a href="#gate" data-filter="gate">Gate</a></li>
+          <li><a href="#coop" data-filter="coop">Chicken coop</a></li>
+          <li><a href="#table" data-filter="table">Tables</a></li>
+        </ul>
+      </li>
       <li class="nav-item"><a href="about.html">About</a></li>
       <li class="nav-item"><a href="contact.html">Contact</a></li>
       <li class="nav-item"><a href="legal.html">©</a></li>
@@ -35,45 +37,95 @@
 <main class="page-main">
   <section class="carousel" aria-label="Featured carpentry projects">
     <div class="carousel-inner">
-      <div class="carousel-slide is-active">
-        <img src="images/chisel_c .jpg" alt="Chisel" />
-        <div class="carousel-caption"></div>
+      <div class="carousel-slide is-active" data-project="coop">
+        <img src="images/chickencoop1.jpg" alt="Chicken coop" />
       </div>
-      <div class="carousel-slide">
-        <img src="images/testgate.jpg" alt="Gate" />
-        <div class="carousel-caption"></div>
+      <div class="carousel-slide" data-project="coop">
+        <img src="images/chickencoop2.jpg" alt="Chicken coop" />
       </div>
-      <div class="carousel-slide">
-        <img src="images/coop_c.jpg" alt="Chicken Coop" />
-        <div class="carousel-caption"></div>
+      <div class="carousel-slide" data-project="coop">
+        <img src="images/chickencoop3.jpg" alt="Chicken coop" />
       </div>
-      <!-- <div class="carousel-slide">
-        <img src="images/gate_part.jpg" alt="Gate" />
-        <div class="carousel-caption">Gate</div>
+      <div class="carousel-slide" data-project="gate">
+        <img src="images/gate-1.jpg" alt="Gate" />
       </div>
-      <div class="carousel-slide">
-        <img src="images/gate_aspect.jpg" alt="Workshop and tools" />
-        <div class="carousel-caption">Workshop & tools</div>
+      <div class="carousel-slide" data-project="gate">
+        <img src="images/gate-2.jpg" alt="Gate detail" />
       </div>
-      <div class="carousel-slide">
-        <img src="images/tools_aspect.jpg" alt="Joinery sketch" />
-        <div class="carousel-caption">Design sketch</div>
-      </div> -->
+      <div class="carousel-slide" data-project="bookcase">
+        <img src="images/bookcase-1.jpg" alt="Bookcase" />
+      </div>
+      <div class="carousel-slide" data-project="bookcase">
+        <img src="images/bookcase-2.jpg" alt="Bookcase" />
+      </div>
+      <div class="carousel-slide" data-project="bookcase">
+        <img src="images/bookcase-3.jpg" alt="Bookcase" />
+      </div>
+      <div class="carousel-slide" data-project="bookcase">
+        <img src="images/bookcase-4.jpg" alt="Bookcase" />
+      </div>
+      <div class="carousel-slide" data-project="bookcase">
+        <img src="images/bookcase-5.jpg" alt="Bookcase" />
+      </div>
+      <div class="carousel-slide" data-project="bookcase">
+        <img src="images/bookcase-6.jpg" alt="Bookcase" />
+      </div>
+      <div class="carousel-slide" data-project="bookcase">
+        <img src="images/bookcase-7.jpg" alt="Bookcase" />
+      </div>
+      <div class="carousel-slide" data-project="bookcase">
+        <img src="images/small-bookcase-1.jpg" alt="Small bookcase" />
+      </div>
+      <div class="carousel-slide" data-project="bookcase">
+        <img src="images/small-bookcase-2.jpg" alt="Small bookcase" />
+      </div>
+      <div class="carousel-slide" data-project="cabinet">
+        <img src="images/cabinet-1.jpg" alt="Cabinet" />
+      </div>
+      <div class="carousel-slide" data-project="cabinet">
+        <img src="images/cabinet-2.jpg" alt="Cabinet" />
+      </div>
+      <div class="carousel-slide" data-project="cabinet">
+        <img src="images/cabinet-3.jpg" alt="Cabinet" />
+      </div>
+      <div class="carousel-slide" data-project="cabinet">
+        <img src="images/cabinet-4.jpg" alt="Cabinet" />
+      </div>
+      <div class="carousel-slide" data-project="cabinet">
+        <img src="images/cabinet-5.jpg" alt="Cabinet" />
+      </div>
+      <div class="carousel-slide" data-project="cabinet">
+        <img src="images/refreshment-area-1.jpg" alt="Refreshment area" />
+      </div>
+      <div class="carousel-slide" data-project="table">
+        <img src="images/table-1.jpg" alt="Table" />
+      </div>
+      <div class="carousel-slide" data-project="table">
+        <img src="images/table-2.jpg" alt="Table" />
+      </div>
+      <div class="carousel-slide" data-project="table">
+        <img src="images/table-3.jpg" alt="Table" />
+      </div>
+      <div class="carousel-slide" data-project="table">
+        <img src="images/table-4.jpg" alt="Table" />
+      </div>
     </div>
 
     <button class="carousel-control prev" aria-label="Previous project">‹</button>
     <button class="carousel-control next" aria-label="Next project">›</button>
 
-    <div class="carousel-dots" aria-hidden="true">
-      <button class="dot is-active"></button>
-      <button class="dot"></button>
-      <button class="dot"></button>
-      <!-- <button class="dot"></button>
-      <button class="dot"></button>
-      <button class="dot"></button> -->
-    </div>
+  </section>
+
+  <section class="project-gallery" aria-live="polite" hidden>
+    <h1 class="project-gallery-title"></h1>
+    <div class="thumbnail-grid"></div>
   </section>
 </main>
+
+<div class="lightbox" hidden>
+  <button type="button" class="lightbox-close" aria-label="Close image">×</button>
+  <img src="" alt="" />
+</div>
 
 <footer class="site-footer">
   <span>© 2026 – Luke Peter Williams</span>
@@ -89,22 +141,63 @@
   });
 
   const slides = Array.from(document.querySelectorAll('.carousel-slide'));
-  const dots = Array.from(document.querySelectorAll('.carousel-dots .dot'));
+  const filterLinks = Array.from(document.querySelectorAll('[data-filter]'));
   const prevBtn = document.querySelector('.carousel-control.prev');
   const nextBtn = document.querySelector('.carousel-control.next');
+  const carousel = document.querySelector('.carousel');
+  const gallery = document.querySelector('.project-gallery');
+  const galleryTitle = document.querySelector('.project-gallery-title');
+  const thumbnailGrid = document.querySelector('.thumbnail-grid');
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImage = document.querySelector('.lightbox img');
+  const lightboxClose = document.querySelector('.lightbox-close');
+  const filterLabels = {
+    all: 'All work',
+    bookcase: 'Bookcases',
+    cabinet: 'Cabinets',
+    gate: 'Gate',
+    coop: 'Chicken coop',
+    table: 'Tables'
+  };
+  let visibleSlides = slides;
   let current = 0;
+  let shuffledIndexes = [];
+  let shuffledPosition = 0;
   let timer = null;
+  let activeThumbnail = null;
 
-  function showSlide(index) {
-    slides[current].classList.remove('is-active');
-    dots[current].classList.remove('is-active');
-    current = (index + slides.length) % slides.length;
-    slides[current].classList.add('is-active');
-    dots[current].classList.add('is-active');
+  function shuffleSlides() {
+    shuffledIndexes = slides.map((slide, i) => i);
+    for (let i = shuffledIndexes.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledIndexes[i], shuffledIndexes[j]] = [shuffledIndexes[j], shuffledIndexes[i]];
+    }
+    shuffledPosition = 0;
   }
 
-  function nextSlide() { showSlide(current + 1); }
-  function prevSlide() { showSlide(current - 1); }
+  function showSlide(index) {
+    if (!visibleSlides.length) { return; }
+    visibleSlides[current].classList.remove('is-active');
+    current = (index + visibleSlides.length) % visibleSlides.length;
+    visibleSlides[current].classList.add('is-active');
+  }
+
+  function showShuffledSlide(step = 1) {
+    if (!shuffledIndexes.length) { shuffleSlides(); }
+    shuffledPosition += step;
+    if (shuffledPosition >= shuffledIndexes.length || shuffledPosition < 0) {
+      const previous = shuffledIndexes[shuffledPosition < 0 ? 0 : shuffledIndexes.length - 1];
+      shuffleSlides();
+      if (shuffledIndexes[0] === previous && shuffledIndexes.length > 1) {
+        [shuffledIndexes[0], shuffledIndexes[1]] = [shuffledIndexes[1], shuffledIndexes[0]];
+      }
+      shuffledPosition = step < 0 ? shuffledIndexes.length - 1 : 0;
+    }
+    showSlide(shuffledIndexes[shuffledPosition]);
+  }
+
+  function nextSlide() { showShuffledSlide(1); }
+  function prevSlide() { showShuffledSlide(-1); }
 
   function startAuto() {
     stopAuto();
@@ -116,14 +209,112 @@
 
   nextBtn.addEventListener('click', () => { nextSlide(); startAuto(); });
   prevBtn.addEventListener('click', () => { prevSlide(); startAuto(); });
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => { showSlide(i); startAuto(); });
+
+  function setActiveFilter(filter) {
+    filterLinks.forEach((item) => item.classList.toggle('is-active', item.dataset.filter === filter));
+  }
+
+  function showCarousel() {
+    gallery.hidden = true;
+    carousel.hidden = false;
+    visibleSlides = slides;
+    slides.forEach((slide) => slide.classList.remove('is-active', 'is-hidden'));
+    shuffleSlides();
+    showSlide(shuffledIndexes[0]);
+    startAuto();
+  }
+
+  function showGallery(filter, selectedSrc = '') {
+    stopAuto();
+    carousel.hidden = true;
+    gallery.hidden = false;
+    galleryTitle.textContent = filterLabels[filter];
+    thumbnailGrid.innerHTML = '';
+    activeThumbnail = null;
+
+    slides.filter((slide) => slide.dataset.project === filter).forEach((slide) => {
+      const img = slide.querySelector('img');
+      const button = document.createElement('button');
+      const thumb = document.createElement('img');
+
+      button.type = 'button';
+      button.className = 'thumbnail-card';
+      thumb.src = img.src;
+      thumb.alt = img.alt;
+      button.setAttribute('aria-label', `Open ${img.alt}`);
+      button.appendChild(thumb);
+      if (img.src === selectedSrc) {
+        button.classList.add('is-selected');
+        activeThumbnail = button;
+      }
+      button.addEventListener('click', () => openLightbox(img.src, img.alt));
+      thumbnailGrid.appendChild(button);
+    });
+  }
+
+  function openLightbox(src, alt) {
+    lightboxImage.src = src;
+    lightboxImage.alt = alt;
+    lightbox.hidden = false;
+    lightboxClose.focus();
+  }
+
+  function openCarouselImage(slide) {
+    const filter = slide.dataset.project;
+    const img = slide.querySelector('img');
+
+    setActiveFilter(filter);
+    showGallery(filter, img.src);
+    openLightbox(img.src, img.alt);
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    lightboxImage.src = '';
+    lightboxImage.alt = '';
+    if (activeThumbnail) {
+      activeThumbnail.scrollIntoView({ block: 'center' });
+    }
+  }
+
+  filterLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const filter = link.dataset.filter;
+
+      setActiveFilter(filter);
+      if (filter === 'all') {
+        showCarousel();
+      } else {
+        showGallery(filter);
+      }
+    });
   });
 
-  const carousel = document.querySelector('.carousel');
+  slides.forEach((slide) => {
+    const img = slide.querySelector('img');
+    img.tabIndex = 0;
+    img.addEventListener('click', () => openCarouselImage(slide));
+    img.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openCarouselImage(slide);
+      }
+    });
+  });
+
   carousel.addEventListener('mouseenter', stopAuto);
   carousel.addEventListener('mouseleave', startAuto);
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) { closeLightbox(); }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !lightbox.hidden) { closeLightbox(); }
+  });
 
+  shuffleSlides();
+  showSlide(shuffledIndexes[0]);
   startAuto();
 </script>
 </body>
