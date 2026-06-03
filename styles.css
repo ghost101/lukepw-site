@@ -366,3 +366,79 @@ a:hover { text-decoration: underline; }
     text-decoration: none;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand h1 {
+  margin: 0;
+}
+
+.strapline {
+  margin: 4px 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+.about-section {
+  max-width: 760px;
+  padding: 40px 30px;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.about-section p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 20px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.contact-button:hover {
+  background: #333;
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-main {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.title-tagline {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #666;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
